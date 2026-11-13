@@ -5,7 +5,7 @@ import { ArrowRight, Plus, Minus } from 'lucide-react'
 import { hero, sections, numbers, numbersNote, footer, nav, solutions, segments, howItWorks, trust, integrations } from '../data/content'
 import { useStore } from '../lib/store'
 import { cx } from '../lib/format'
-import { Logo, Reveal, CountUp, PLink, useHref, type Skin } from '../shared/ui'
+import { Credit, Logo, Reveal, CountUp, PLink, useHref, type Skin } from '../shared/ui'
 import { Screen, StockScreen } from '../shared/screens'
 import { CtaBand } from '../shared/pages'
 import { Crumbs, Dropdown, menuGroups } from './common'
@@ -51,7 +51,7 @@ function Layout({ children }: { children: ReactNode }) {
           <div><Logo className="h-9" /><p className="mt-4 max-w-xs text-sm text-muted">{footer.tagline}</p></div>
           {footer.columns.map((c) => <div key={c.title}><p className="text-sm font-medium">{c.title}</p><ul className="mt-3 space-y-2 text-sm text-muted">{c.links.map((l) => <li key={l.label}><PLink to={l.to} className="hover:text-ink">{l.label}</PLink></li>)}</ul></div>)}
         </div>
-        <p className="mt-12 text-xs text-muted">{footer.legal}</p>
+        <p className="mt-12 text-xs text-muted">{footer.legal} <Credit className="ml-1" /></p>
       </footer>
     </>
   )

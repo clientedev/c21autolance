@@ -4,7 +4,7 @@ import { Menu, X, ArrowUpRight, ArrowRight, Activity, Plug, ShieldCheck } from '
 import { hero, sections, numbers, numbersNote, footer, nav, solutions, segments, howItWorks, trust, integrations } from '../data/content'
 import { useStore } from '../lib/store'
 import { cx } from '../lib/format'
-import { Logo, Reveal, CountUp, PLink, BrandVideo, type Skin } from '../shared/ui'
+import { Credit, Logo, Reveal, CountUp, PLink, BrandVideo, type Skin } from '../shared/ui'
 import { Screen, DashboardScreen, EvaluationScreen, IntelScreen } from '../shared/screens'
 import { CtaBand } from '../shared/pages'
 import { Crumbs, Dropdown, menuGroups } from './common'
@@ -65,7 +65,7 @@ function Layout({ children }: { children: ReactNode }) {
           <div><Logo tone="white" className="h-11" /><p className="mt-5 max-w-xs text-sm text-muted">{footer.tagline}</p><p className="mt-6 inline-flex items-center gap-2 font-mono text-xs text-[#66c18c]"><span className="pulse-dot h-2 w-2 rounded-full bg-[#66c18c] text-[#66c18c]" /> plataforma operacional</p></div>
           {footer.columns.map((c) => <div key={c.title}><p className="font-mono text-xs text-muted">/{c.title.toLowerCase()}</p><ul className="mt-4 space-y-2.5 text-sm">{c.links.map((l) => <li key={l.label}><PLink to={l.to} className="text-white/80 hover:text-[#66c18c]">{l.label}</PLink></li>)}</ul></div>)}
         </div>
-        <div className="wrap border-t border-white/10 py-6 font-mono text-[11px] text-muted">{footer.legal}</div>
+        <div className="wrap border-t border-white/10 py-6 font-mono text-[11px] text-muted">{footer.legal} <Credit className="ml-1" /></div>
       </footer>
     </>
   )

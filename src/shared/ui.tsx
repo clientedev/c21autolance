@@ -460,3 +460,14 @@ export function specList(v: Vehicle) {
     ['Final da placa', String(v.plateEnd)],
   ] as const
 }
+
+/* ─── Crédito do autor ─── */
+export const AUTHOR = { name: 'Gabriel Eduardo Almeida', url: 'https://www.linkedin.com/in/gabriel-eduardo-almeida/' }
+export function Credit({ className }: { className?: string }) {
+  return (
+    <span className={cx('whitespace-nowrap', className)}>
+      Feito por{' '}
+      <a href={AUTHOR.url} target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-1 underline-offset-4 opacity-100 transition hover:text-[#66c18c]">{AUTHOR.name}</a>
+    </span>
+  )
+}

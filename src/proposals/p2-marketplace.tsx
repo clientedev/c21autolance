@@ -4,7 +4,7 @@ import { Menu, X, Check, X as No, ArrowRight, ChevronRight, ShieldCheck, Plus, M
 import { hero, sections, numbers, numbersNote, footer, nav, solutions, segments, howItWorks, faq, contact } from '../data/content'
 import { useStore } from '../lib/store'
 import { cx } from '../lib/format'
-import { Logo, Reveal, CountUp, PLink, type Skin } from '../shared/ui'
+import { Credit, Logo, Reveal, CountUp, PLink, type Skin } from '../shared/ui'
 import { Screen, AuctionScreen } from '../shared/screens'
 import { CtaBand } from '../shared/pages'
 import { Crumbs, Dropdown, menuGroups } from './common'
@@ -58,7 +58,7 @@ function Layout({ children }: { children: ReactNode }) {
           <div><Logo className="h-11" /><p className="mt-4 max-w-xs text-sm text-muted">{footer.tagline}</p><PLink to="contato" className="btn btn-primary btn-sm mt-5">{nav.cta.label}</PLink></div>
           {footer.columns.map((c) => <div key={c.title}><p className="text-sm font-bold">{c.title}</p><ul className="mt-3 space-y-2 text-sm text-muted">{c.links.map((l) => <li key={l.label}><PLink to={l.to} className="hover:text-[#2b2d8b]">{l.label}</PLink></li>)}</ul></div>)}
         </div>
-        <div className="border-t border-[rgb(var(--line))] bg-[#fafbfc]"><div className="wrap flex flex-wrap items-center justify-between gap-3 py-4 text-xs text-muted"><span>{footer.legal}</span><span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-[#4fa874]" /> Dados tratados conforme a LGPD</span></div></div>
+        <div className="border-t border-[rgb(var(--line))] bg-[#fafbfc]"><div className="wrap flex flex-wrap items-center justify-between gap-3 py-4 text-xs text-muted"><span>{footer.legal} <Credit className="ml-1" /></span><span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-[#4fa874]" /> Dados tratados conforme a LGPD</span></div></div>
       </footer>
     </>
   )

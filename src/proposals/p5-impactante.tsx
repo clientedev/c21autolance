@@ -6,7 +6,7 @@ import { media } from '../data/vehicles'
 import { hero, sections, numbers, numbersNote, footer, nav, solutions, segments, howItWorks } from '../data/content'
 import { useStore } from '../lib/store'
 import { cx } from '../lib/format'
-import { Logo, Reveal, CountUp, PLink, BrandVideo, type Skin } from '../shared/ui'
+import { Credit, Logo, Reveal, CountUp, PLink, BrandVideo, type Skin } from '../shared/ui'
 import { Screen } from '../shared/screens'
 import { Crumbs, Dropdown, menuGroups } from './common'
 
@@ -70,7 +70,7 @@ function Layout({ children }: { children: ReactNode }) {
           <div><Logo tone="white" className="h-16" /><p className="mt-6 max-w-xs text-white/60">{footer.tagline}</p></div>
           {footer.columns.map((c) => <div key={c.title}><p className="font-display text-lg font-semibold uppercase tracking-wider text-[#66c18c]">{c.title}</p><ul className="mt-4 space-y-2.5 text-white/75">{c.links.map((l) => <li key={l.label}><PLink to={l.to} className="hover:text-white">{l.label}</PLink></li>)}</ul></div>)}
         </div>
-        <div className="wrap border-t border-white/10 py-6 text-xs text-white/40">{footer.legal}</div>
+        <div className="wrap border-t border-white/10 py-6 text-xs text-white/40">{footer.legal} <Credit className="ml-1" /></div>
       </footer>
     </>
   )

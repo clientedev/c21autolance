@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Columns2, Star } from 'lucide-react'
 import { proposals } from '../data/proposals'
 import { useStore } from '../lib/store'
-import { Logo, Reveal } from '../shared/ui'
+import { Logo, Reveal, Credit } from '../shared/ui'
 import { cx } from '../lib/format'
 
 export function ShowroomShell({ children }: { children: React.ReactNode }) {
@@ -18,7 +18,7 @@ export function ShowroomShell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       {children}
-      <footer className="mx-auto max-w-[1320px] px-6 py-10 text-xs text-[#8a8ea3]">C21 AutoLance · Seis propostas de experiência digital · Ambiente demonstrativo</footer>
+      <footer className="mx-auto flex max-w-[1320px] flex-wrap justify-between gap-3 px-6 py-10 text-xs text-[#8a8ea3]"><span>C21 AutoLance · Seis propostas de experiência digital · Ambiente demonstrativo</span><Credit className="text-[#4a4f6a]" /></footer>
     </div>
   )
 }

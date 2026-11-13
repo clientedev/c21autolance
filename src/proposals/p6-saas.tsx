@@ -5,7 +5,7 @@ import { Menu, X, ArrowRight, Home as HomeIcon, Info, Workflow, Mail, HelpCircle
 import { hero, sections, numbers, numbersNote, footer, nav, solutions, segments, howItWorks, trust, integrations } from '../data/content'
 import { useStore } from '../lib/store'
 import { cx } from '../lib/format'
-import { Logo, Reveal, CountUp, PLink, useHref, type Skin } from '../shared/ui'
+import { Credit, Logo, Reveal, CountUp, PLink, useHref, type Skin } from '../shared/ui'
 import { Screen } from '../shared/screens'
 import { CtaBand } from '../shared/pages'
 import { Crumbs } from './common'
@@ -77,7 +77,7 @@ function Layout({ children }: { children: ReactNode }) {
           <div><Logo className="h-9" /><p className="mt-3 max-w-xs text-sm text-muted">{footer.tagline}</p></div>
           {footer.columns.map((c) => <div key={c.title}><p className="text-xs font-semibold uppercase tracking-wider text-muted">{c.title}</p><ul className="mt-3 space-y-1.5 text-sm">{c.links.map((l) => <li key={l.label}><PLink to={l.to} className="hover:text-[#2b2d8b]">{l.label}</PLink></li>)}</ul></div>)}
         </div>
-        <div className="wrap border-t border-[rgb(var(--line))] py-4 text-xs text-muted">{footer.legal}</div>
+        <div className="wrap border-t border-[rgb(var(--line))] py-4 text-xs text-muted">{footer.legal} <Credit className="ml-1" /></div>
       </footer>
     </div>
   )
