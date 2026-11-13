@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import { Check, X as XIcon, ArrowRight, Phone, Mail, MapPin, FileText, Plus, Minus, LogOut, ShieldCheck, Lock, Plug } from 'lucide-react'
 import { solutions, segments, howItWorks, trust, integrations, about, faq, terms, contact, sections, numbers, numbersNote, getSolution, getSegment } from '../data/content'
-import { getVehicle } from '../data/vehicles'
+import { getVehicle, media } from '../data/vehicles'
 import { useStore } from '../lib/store'
 import { brl, cx } from '../lib/format'
 import { useSkin, PLink, StatusTag, Reveal, CountUp } from './ui'
@@ -50,6 +50,10 @@ export function SolutionPage() {
   return (
     <>
       <PageHeader eyebrow={s.name} title={s.title} text={s.lead} crumbs={[{ label: 'Início', to: '' }, { label: 'Soluções' }, { label: s.name }]} />
+      <section className="relative h-[42vh] min-h-[300px] overflow-hidden bg-[#0d013a]">
+        <img src={media(s.photo)} alt="" className="kenburns absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d013a]/70 via-transparent to-transparent" />
+      </section>
       <section className="wrap py-14">
         <Reveal className={cx('relative', s.screen === 'evaluation' ? 'flex justify-center' : '')}><Screen id={s.screen} dark={dark} /></Reveal>
         <p className="mt-4 text-center text-xs text-muted">Tela ilustrativa e interativa da plataforma. Dados demonstrativos.</p>
@@ -107,6 +111,10 @@ export function SegmentPage() {
   return (
     <>
       <PageHeader eyebrow={`Para ${s.name.toLowerCase()}`} title={s.title} text={s.lead} crumbs={[{ label: 'Início', to: '' }, { label: 'Para quem' }, { label: s.name }]} />
+      <section className="relative h-[42vh] min-h-[300px] overflow-hidden bg-[#0d013a]">
+        <img src={media(s.photo)} alt="" className="kenburns absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d013a]/70 via-transparent to-transparent" />
+      </section>
       <section className="wrap grid gap-6 py-14 md:grid-cols-2">
         <div className="panel p-7">
           <p className="text-sm font-semibold text-muted">Sem a plataforma</p>

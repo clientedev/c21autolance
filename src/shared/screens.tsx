@@ -84,7 +84,7 @@ const condFactor = { Excelente: 1, Bom: 0.95, Regular: 0.87 }
 export function EvaluationScreen() {
   const [cond, setCond] = useState<keyof typeof condFactor>('Bom')
   const [sent, setSent] = useState(false)
-  const base = 116400 * condFactor[cond]
+  const base = 162400 * condFactor[cond]
   const r = (n: number) => Math.round(n / 100) * 100
   const checks = ['Frente e traseira', 'Laterais', 'Interior e painel', 'Pneus e rodas', 'Motor', 'Documentos']
   return (
@@ -92,12 +92,12 @@ export function EvaluationScreen() {
       <div className="h-[560px] overflow-hidden">
         <div className="bg-[#0d013a] px-4 pb-3 pt-9 text-white">
           <p className="text-[10px] text-white/60">Avaliação #AV-5841 · Unidade Morumbi</p>
-          <p className="text-sm font-semibold">Chery Tiggo 7 1.5 TXS 2022</p>
-          <p className="text-[10px] text-white/60">38.420 km · Vermelho · Placa final 7</p>
+          <p className="text-sm font-semibold">CAOA Chery Tiggo 7 Pro 2025</p>
+          <p className="text-[10px] text-white/60">18.420 km · Azul · Placa final 7</p>
         </div>
         <div className="space-y-2.5 p-3">
           <div className="grid grid-cols-3 gap-1.5">
-            {['tiggo7-2.webp', 'tiggo7-3.webp', 'tiggo7-1.webp'].map((f) => <img key={f} src={media(f)} alt="" className="aspect-square w-full rounded-md object-cover" />)}
+            {['caoa/tiggo7-night.webp', 'caoa/tiggo7-interior.webp', 'caoa/tiggo7-seats.webp'].map((f) => <img key={f} src={media(f)} alt="" className="aspect-square w-full rounded-md object-cover" />)}
           </div>
           <div className="rounded-lg bg-white p-2.5">
             <p className="mb-1.5 flex items-center justify-between text-[11px] font-semibold">Checklist <span className="text-[10px] font-normal text-[#2f8a57]">6/6</span></p>
@@ -185,12 +185,12 @@ function LotItem({ id, on, onClick }: { id: string; on: boolean; onClick: () => 
 /* ─── 3. Negociações (funil) ─── */
 type Deal = { id: string; vehicle: string; value: number; buyer: string; time: string; col: number }
 const initialDeals: Deal[] = [
-  { id: 'N-1', vehicle: 'Ford Ka 1.0 SE 2016', value: 41000, buyer: 'Lojista #208', time: 'há 12 min', col: 0 },
-  { id: 'N-2', vehicle: 'Hyundai i30 1.8 2015', value: 59800, buyer: 'Lojista #154', time: 'há 40 min', col: 0 },
-  { id: 'N-3', vehicle: 'Hyundai HB20 1.0 2022', value: 68500, buyer: 'Concessionária #07', time: 'há 1 h', col: 1 },
-  { id: 'N-4', vehicle: 'Chery Tiggo 5x 2023', value: 109000, buyer: 'Lojista #331', time: 'há 2 h', col: 2 },
-  { id: 'N-5', vehicle: 'Ford Ranger XLT 2019', value: 168000, buyer: 'Lojista #090', time: 'ontem', col: 3 },
-  { id: 'N-6', vehicle: 'Hyundai Creta 2.0 2021', value: 104500, buyer: 'Concessionária #12', time: 'ontem', col: 3 },
+  { id: 'N-1', vehicle: 'CAOA Chery Tiggo 5X Pro 2024', value: 106500, buyer: 'Lojista #208', time: 'há 12 min', col: 0 },
+  { id: 'N-2', vehicle: 'CAOA Changan CS55 PHEV 2026', value: 184000, buyer: 'Lojista #154', time: 'há 40 min', col: 0 },
+  { id: 'N-3', vehicle: 'CAOA Chery Tiggo 7 Sport 2023', value: 118500, buyer: 'Concessionária #07', time: 'há 1 h', col: 1 },
+  { id: 'N-4', vehicle: 'CAOA Chery Tiggo 8 Pro 2024', value: 176000, buyer: 'Lojista #331', time: 'há 2 h', col: 2 },
+  { id: 'N-5', vehicle: 'CAOA Changan CS75 2026', value: 198000, buyer: 'Lojista #090', time: 'ontem', col: 3 },
+  { id: 'N-6', vehicle: 'CAOA Chery Arrizo 6 Pro 2024', value: 112500, buyer: 'Concessionária #12', time: 'ontem', col: 3 },
 ]
 const cols = ['Recebidas', 'Em análise', 'Contraproposta', 'Aceitas']
 export function OffersScreen({ dark }: { dark?: boolean }) {
@@ -224,11 +224,11 @@ export function OffersScreen({ dark }: { dark?: boolean }) {
 
 /* ─── 4. Gestão de estoque ─── */
 const stockRows = [
-  { v: 'chery-tiggo-7-txs-2022', unit: 'Morumbi', days: 12, vsMarket: -1.8, action: 'Manter' },
-  { v: 'ford-explorer-sport-2018', unit: 'Savassi', days: 48, vsMarket: 4.2, action: 'Reprecificar' },
-  { v: 'hyundai-i30-gls-2015', unit: 'Cambuí', days: 67, vsMarket: 6.1, action: 'Enviar para repasse' },
-  { v: 'ford-ka-se-2016', unit: 'Jd. Irajá', days: 21, vsMarket: -0.6, action: 'Manter' },
-  { v: 'hyundai-i30-fastback-2019', unit: 'Batel', days: 35, vsMarket: 2.4, action: 'Publicar em portais' },
+  { v: 'tiggo-7-pro-2025', unit: 'Morumbi', days: 12, vsMarket: -1.8, action: 'Manter' },
+  { v: 'tiggo-8-pro-phev-2025', unit: 'Savassi', days: 48, vsMarket: 4.2, action: 'Reprecificar' },
+  { v: 'tiggo-5x-pro-2024', unit: 'Cambuí', days: 67, vsMarket: 6.1, action: 'Enviar para repasse' },
+  { v: 'changan-cs55-phev-2026', unit: 'Jd. Irajá', days: 21, vsMarket: -0.6, action: 'Manter' },
+  { v: 'changan-uni-t-2026', unit: 'Batel', days: 35, vsMarket: 2.4, action: 'Publicar em portais' },
 ]
 const aging = [
   { unit: 'Morumbi', a: 22, b: 9, c: 3 },
@@ -293,16 +293,16 @@ export function StockScreen({ dark }: { dark?: boolean }) {
 
 /* ─── 5. Inteligência de mercado ─── */
 const series: Record<string, number[]> = {
-  'Chery Tiggo 7 2022': [121800, 121200, 120900, 120100, 119700, 119900, 119200, 118600, 118100, 117900, 117300, 116900],
-  'Hyundai HB20 2022': [71200, 71500, 71300, 71900, 72100, 72000, 72600, 72400, 72900, 73300, 73100, 73600],
-  'Ford Ka 2016': [44900, 44700, 44800, 44500, 44300, 44400, 44100, 43900, 44000, 43700, 43600, 43500],
+  'Tiggo 7 Pro 2025': [171800, 171200, 170600, 170100, 169400, 169600, 168900, 168300, 167800, 167500, 166900, 166400],
+  'UNI-T 2026': [178200, 178900, 179300, 179100, 179800, 180400, 180200, 180900, 181300, 181100, 181800, 182000],
+  'Tiggo 5X Pro 2024': [119300, 118900, 118700, 118200, 117900, 117600, 117200, 116800, 116500, 116100, 115800, 115400],
 }
 const liquidity = [
-  { model: 'Hyundai HB20', days: 9 },
-  { model: 'Ford Ka', days: 11 },
-  { model: 'Hyundai Creta', days: 14 },
-  { model: 'Chery Tiggo 7', days: 17 },
-  { model: 'Ford Ranger', days: 22 },
+  { model: 'CAOA Changan UNI-T', days: 8 },
+  { model: 'CAOA Chery Tiggo 5X Pro', days: 10 },
+  { model: 'CAOA Chery Tiggo 7 Pro', days: 13 },
+  { model: 'CAOA Changan CS55', days: 16 },
+  { model: 'CAOA Chery Tiggo 8 Pro', days: 21 },
 ]
 export function IntelScreen({ dark }: { dark?: boolean }) {
   const keys = Object.keys(series)

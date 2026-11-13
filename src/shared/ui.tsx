@@ -17,7 +17,7 @@ export const SkinCtx = createContext<Skin | null>(null)
 export const useSkin = () => useContext(SkinCtx)!
 export const useHref = () => {
   const { base } = useSkin()
-  return (to: string) => (to ? `${base}/${to}` : base)
+  return (to: string) => (to ? `${base}/${to}` : base || '/')
 }
 
 /* ─── Marca ─── */
@@ -84,7 +84,7 @@ export function ScrollTop() {
 }
 
 /* ─── Vídeo institucional (arquivo real, gerado a partir das fotos oficiais) ─── */
-export function BrandVideo({ className, controlsClass }: { className?: string; controlsClass?: string }) {
+export function BrandVideo({ className, controlsClass, src = 'c21-hero.mp4', poster = 'c21-hero-poster.webp' }: { className?: string; controlsClass?: string; src?: string; poster?: string }) {
   const ref = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(true)
   useEffect(() => {
@@ -101,7 +101,7 @@ export function BrandVideo({ className, controlsClass }: { className?: string; c
   }
   return (
     <>
-      <video ref={ref} className={className} src={media('c21-institucional.mp4')} poster={media('c21-institucional-poster.webp')} autoPlay muted loop playsInline aria-label="Vídeo institucional C21 AutoLance" />
+      <video ref={ref} className={className} src={media(src)} poster={media(poster)} autoPlay muted loop playsInline aria-label="Vídeo institucional C21 AutoLance" />
       <button onClick={toggle} aria-label={playing ? 'Pausar vídeo' : 'Reproduzir vídeo'} className={cx('grid h-9 w-9 place-items-center rounded-full border border-white/30 bg-black/30 text-white backdrop-blur transition hover:bg-black/50', controlsClass)}>
         {playing ? <Pause size={14} /> : <Play size={14} />}
       </button>

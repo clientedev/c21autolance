@@ -13,7 +13,7 @@ import { Crumbs, Dropdown, menuGroups } from './common'
 function PageHeader({ eyebrow, title, text, crumbs }: Parameters<Skin['PageHeader']>[0]) {
   return (
     <header className="relative overflow-hidden bg-[#0d013a] pb-14 pt-32">
-      <img src={media('explorer-3.webp')} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
+      <img src={media('caoa/tiggo9-street.webp')} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#08061a] via-[#08061a]/85 to-transparent" />
       <div className="absolute bottom-0 right-0 h-full w-1/3 bg-[#66c18c]" style={{ clipPath: 'polygon(70% 0, 100% 0, 100% 100%, 40% 100%)', opacity: 0.9 }} />
       <div className="wrap relative">
@@ -77,7 +77,7 @@ function Layout({ children }: { children: ReactNode }) {
 }
 
 function Home() {
-  const segImgs = [media('tiggo7-hero.webp'), media('explorer-1.webp'), media('fastback-hero.webp')]
+  const segImgs = [media('caoa/tiggo7-night.webp'), media('caoa/unit-desert.webp'), media('caoa/tiggo9-street.webp')]
   return (
     <>
       <section className="relative h-[100svh] min-h-[640px] overflow-hidden bg-black">
@@ -137,7 +137,7 @@ function Home() {
       </section>
 
       <section className="relative overflow-hidden">
-        <img src={media('explorer-hero.webp')} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={media('caoa/tiggo8-studio.webp')} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d013a] via-[#0d013a]/85 to-[#0d013a]/30" />
         <div className="wrap relative py-24">
           <p className="font-display text-lg font-semibold uppercase tracking-[0.2em] text-[#66c18c]">Demonstração</p>

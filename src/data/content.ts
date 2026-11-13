@@ -12,6 +12,7 @@ export interface Solution {
   lead: string
   icon: LucideIcon
   screen: ScreenId
+  photo: string
   features: { title: string; text: string }[]
   results: { value: string; label: string }[]
 }
@@ -19,6 +20,7 @@ export interface Solution {
 export const solutions: Solution[] = [
   {
     slug: 'avaliacao',
+    photo: 'caoa/tiggo5x-studio.webp',
     name: 'Avaliação de veículos',
     short: 'Avaliação digital pelo aplicativo, com fotos, checklist de avarias e preço sugerido em minutos.',
     title: 'Avalie o usado na mesa de negociação, com preço de mercado na hora.',
@@ -41,6 +43,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'repasse',
+    photo: 'caoa/tiggo8-studio.webp',
     name: 'Repasse e lances',
     short: 'Pregão online de usados para lojistas verificados em todo o país, com lances em tempo real.',
     title: 'Repasse o usado que não fica no estoque em horas, não em semanas.',
@@ -63,6 +66,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'negociacoes',
+    photo: 'caoa/cs55-duo.webp',
     name: 'Ofertas e negociações',
     short: 'Propostas, contrapropostas e histórico completo de cada negociação em um único fluxo.',
     title: 'Cada proposta registrada, cada decisão rastreável.',
@@ -85,6 +89,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'estoque',
+    photo: 'caoa/tiggo5x-duo.webp',
     name: 'Gestão de estoque',
     short: 'Giro, custo de permanência e precificação de cada usado, por loja e por grupo.',
     title: 'Saiba qual carro está custando dinheiro parado no pátio.',
@@ -107,6 +112,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'inteligencia',
+    photo: 'caoa/tiggo9-powertrain.webp',
     name: 'Inteligência de mercado',
     short: 'Preços transacionais, tendências por modelo e região e relatórios para a diretoria.',
     title: 'Precifique com o que o mercado realmente pagou.',
@@ -129,11 +135,12 @@ export const solutions: Solution[] = [
   },
 ]
 
-export interface Segment { slug: string; name: string; short: string; title: string; lead: string; icon: LucideIcon; pains: string[]; gains: string[]; solutions: string[] }
+export interface Segment { slug: string; photo: string; name: string; short: string; title: string; lead: string; icon: LucideIcon; pains: string[]; gains: string[]; solutions: string[] }
 
 export const segments: Segment[] = [
   {
     slug: 'concessionarias',
+    photo: 'caoa/tiggo7-night.webp',
     name: 'Concessionárias',
     short: 'Avalie a troca com segurança, repasse o que não fica no estoque e proteja a margem do usado.',
     title: 'Mais margem no usado, mais velocidade na troca.',
@@ -145,6 +152,7 @@ export const segments: Segment[] = [
   },
   {
     slug: 'lojistas',
+    photo: 'caoa/unit-desert.webp',
     name: 'Lojistas multimarcas',
     short: 'Compre estoque de procedência direto das concessionárias, com laudo e histórico de lances.',
     title: 'Estoque de procedência, comprado direto da fonte.',
@@ -156,6 +164,7 @@ export const segments: Segment[] = [
   },
   {
     slug: 'grupos',
+    photo: 'caoa/tiggo9-street.webp',
     name: 'Grupos e montadoras',
     short: 'Visão consolidada de usados por marca, loja e região, com política de preço padronizada.',
     title: 'Uma política de usados para todo o grupo.',

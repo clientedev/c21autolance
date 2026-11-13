@@ -74,9 +74,9 @@ function initialAuctions(): Record<string, LiveAuction> {
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(() => read('user', null))
-  const [favorites, setFavorites] = useState<string[]>(() => read('favorites', ['chery-tiggo-7-txs-2022']))
-  const [followed, setFollowed] = useState<string[]>(() => read('followed', ['hyundai-i30-fastback-2019', 'ford-explorer-sport-2018']))
-  const [proposals, setProposals] = useState<UserProposal[]>(() => read('proposals', seedProposals))
+  const [favorites, setFavorites] = useState<string[]>(() => read('favorites2', ['tiggo-7-pro-2025']))
+  const [followed, setFollowed] = useState<string[]>(() => read('followed2', ['changan-uni-t-2026', 'tiggo-8-pro-phev-2025']))
+  const [proposals, setProposals] = useState<UserProposal[]>(() => read('proposals2', seedProposals))
   const [evaluations, setEvaluations] = useState<Evaluation[]>(() => read('evaluations', []))
   const [favoriteConcept, setFC] = useState<ProposalId | null>(() => read('concept', null))
   const [auctions, setAuctions] = useState(initialAuctions)
@@ -85,9 +85,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const tid = useRef(1)
 
   useEffect(() => write('user', user), [user])
-  useEffect(() => write('favorites', favorites), [favorites])
-  useEffect(() => write('followed', followed), [followed])
-  useEffect(() => write('proposals', proposals), [proposals])
+  useEffect(() => write('favorites2', favorites), [favorites])
+  useEffect(() => write('followed2', followed), [followed])
+  useEffect(() => write('proposals2', proposals), [proposals])
   useEffect(() => write('evaluations', evaluations), [evaluations])
   useEffect(() => write('concept', favoriteConcept), [favoriteConcept])
 
