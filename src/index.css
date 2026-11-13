@@ -1,0 +1,135 @@
+@import '@fontsource/saira/latin-300.css';
+@import '@fontsource/saira/latin-400.css';
+@import '@fontsource/saira/latin-500.css';
+@import '@fontsource/saira/latin-600.css';
+@import '@fontsource/archivo/latin-400.css';
+@import '@fontsource/archivo/latin-500.css';
+@import '@fontsource/archivo/latin-600.css';
+@import '@fontsource/archivo/latin-700.css';
+@import '@fontsource/sora/latin-300.css';
+@import '@fontsource/sora/latin-400.css';
+@import '@fontsource/sora/latin-600.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+@import '@fontsource/ibm-plex-sans/latin-300.css';
+@import '@fontsource/ibm-plex-sans/latin-400.css';
+@import '@fontsource/ibm-plex-sans/latin-500.css';
+@import '@fontsource/ibm-plex-sans/latin-600.css';
+@import '@fontsource/barlow-condensed/latin-500.css';
+@import '@fontsource/barlow-condensed/latin-600.css';
+@import '@fontsource/barlow-condensed/latin-700.css';
+@import '@fontsource/barlow/latin-400.css';
+@import '@fontsource/barlow/latin-500.css';
+@import '@fontsource/barlow/latin-600.css';
+@import '@fontsource/dm-sans/latin-400.css';
+@import '@fontsource/dm-sans/latin-500.css';
+@import '@fontsource/dm-sans/latin-600.css';
+@import '@fontsource/dm-sans/latin-700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 247 246 243; --surface: 255 255 255; --ink: 13 1 58; --muted: 92 95 115; --line: 223 222 216;
+  --brand: 13 1 58; --accent: 102 193 140; --on-brand: 255 255 255; --radius: 4px;
+  --font-display: 'Saira', system-ui, sans-serif; --font-body: 'Saira', system-ui, sans-serif;
+}
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--font-body); color: rgb(var(--ink)); background: rgb(var(--bg)); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; }
+
+/* ─── Temas ─────────────────────────────────────────────── */
+.theme { font-family: var(--font-body); color: rgb(var(--ink)); background: rgb(var(--bg)); min-height: 100vh; }
+.t-corporativa { --bg: 247 246 243; --surface: 255 255 255; --ink: 13 1 58; --muted: 96 97 118; --line: 224 222 216; --brand: 13 1 58; --accent: 102 193 140; --radius: 2px; --font-display: 'Saira', sans-serif; --font-body: 'Saira', sans-serif; }
+.t-marketplace { --bg: 242 243 247; --surface: 255 255 255; --ink: 21 22 40; --muted: 95 99 118; --line: 224 226 234; --brand: 43 45 139; --accent: 102 193 140; --radius: 6px; --font-display: 'Archivo', sans-serif; --font-body: 'Archivo', sans-serif; }
+.t-tecnologica { --bg: 9 3 40; --surface: 20 13 70; --ink: 236 237 250; --muted: 158 160 200; --line: 50 44 108; --brand: 55 78 161; --accent: 102 193 140; --radius: 10px; --font-display: 'Sora', sans-serif; --font-body: 'Sora', sans-serif; }
+.t-executiva { --bg: 255 255 255; --surface: 255 255 255; --ink: 16 16 26; --muted: 103 105 120; --line: 231 231 236; --brand: 13 1 58; --accent: 79 168 116; --radius: 0px; --font-display: 'IBM Plex Sans', sans-serif; --font-body: 'IBM Plex Sans', sans-serif; }
+.t-impactante { --bg: 8 6 26; --surface: 20 17 50; --ink: 246 246 250; --muted: 168 168 190; --line: 46 43 84; --brand: 43 45 139; --accent: 102 193 140; --radius: 0px; --font-display: 'Barlow Condensed', sans-serif; --font-body: 'Barlow', sans-serif; }
+.t-saas { --bg: 241 243 248; --surface: 255 255 255; --ink: 22 24 46; --muted: 100 105 128; --line: 226 229 238; --brand: 43 45 139; --accent: 79 168 116; --radius: 6px; --font-display: 'DM Sans', sans-serif; --font-body: 'DM Sans', sans-serif; }
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-site px-5 md:px-8; }
+  .eyebrow { @apply text-[11px] font-medium uppercase tracking-[0.18em] text-muted; }
+  .panel { background: rgb(var(--surface)); border: 1px solid rgb(var(--line)); border-radius: var(--radius); }
+  .btn { @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition duration-200 disabled:cursor-not-allowed disabled:opacity-50; border-radius: var(--radius); height: 44px; padding: 0 20px; }
+  .btn-sm { height: 36px; padding: 0 14px; font-size: 13px; }
+  .btn-primary { background: rgb(var(--brand)); color: rgb(var(--on-brand)); }
+  .btn-primary:hover { filter: brightness(1.18); }
+  .btn-accent { background: rgb(var(--accent)); color: #0d013a; }
+  .btn-accent:hover { filter: brightness(1.06); box-shadow: 0 0 0 3px rgb(var(--accent) / .22); }
+  .btn-outline { border: 1px solid rgb(var(--line)); background: transparent; color: rgb(var(--ink)); }
+  .btn-outline:hover { border-color: rgb(var(--ink) / .5); }
+  .btn-ghost { background: transparent; color: rgb(var(--ink)); }
+  .btn-ghost:hover { background: rgb(var(--ink) / .06); }
+  .btn:active:not(:disabled) { transform: translateY(1px); }
+  .field { @apply w-full text-sm outline-none transition; height: 44px; padding: 0 12px; background: rgb(var(--surface)); border: 1px solid rgb(var(--line)); border-radius: var(--radius); color: rgb(var(--ink)); }
+  textarea.field { height: auto; padding: 10px 12px; }
+  .field:focus { border-color: rgb(var(--accent)); box-shadow: 0 0 0 3px rgb(var(--accent) / .18); }
+  select.field { appearance: none; padding-right: 34px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+  .label { @apply mb-1.5 block text-xs font-medium text-muted; }
+  .tbl { @apply w-full border-collapse text-sm; }
+  .tbl th { @apply whitespace-nowrap px-4 py-3 text-left text-[11px] font-medium uppercase tracking-wider text-muted; border-bottom: 1px solid rgb(var(--line)); }
+  .tbl td { @apply px-4 py-3.5 align-middle; border-bottom: 1px solid rgb(var(--line)); }
+  .tbl tbody tr { transition: background .15s; }
+  .tbl tbody tr:hover { background: rgb(var(--ink) / .025); }
+  .tag { @apply inline-flex items-center gap-1 whitespace-nowrap px-2 py-0.5 text-[11px] font-medium; border-radius: calc(var(--radius) * .6); }
+  .num { font-variant-numeric: tabular-nums; }
+  .link { @apply underline decoration-1 underline-offset-4 transition; text-decoration-color: rgb(var(--ink) / .3); }
+  .link:hover { text-decoration-color: rgb(var(--accent)); }
+}
+
+/* Variações de componentes por proposta */
+.t-corporativa .panel { box-shadow: none; }
+.t-corporativa .btn { letter-spacing: .06em; text-transform: uppercase; font-size: 12px; }
+.t-marketplace .panel { box-shadow: 0 1px 2px rgb(16 18 40 / .04); }
+.t-marketplace .btn { font-weight: 600; }
+.t-tecnologica .panel { background: rgb(var(--surface) / .7); }
+.t-tecnologica .field { background: rgb(255 255 255 / .04); }
+.t-tecnologica .btn-primary { background: rgb(var(--accent)); color: #0d013a; }
+.t-tecnologica select.field option, .t-impactante select.field option { background: #140f40; color: #fff; }
+.t-executiva .panel { border-width: 1px 0 0 0; }
+.t-executiva .btn { height: 40px; font-weight: 500; }
+.t-executiva .btn-primary { background: #10101a; }
+.t-executiva .tbl th { font-weight: 500; letter-spacing: .04em; text-transform: none; font-size: 12px; }
+.t-impactante .btn { text-transform: uppercase; letter-spacing: .08em; font-weight: 600; font-size: 13px; }
+.t-impactante .btn-primary { background: rgb(var(--accent)); color: #0d013a; }
+.t-impactante .panel { border-left: 3px solid rgb(var(--accent)); border-top: 0; border-right: 0; border-bottom: 0; }
+.t-impactante .field { background: rgb(255 255 255 / .05); }
+.t-saas .panel { box-shadow: 0 1px 2px rgb(16 18 40 / .05); }
+.t-saas .btn { height: 38px; font-weight: 600; font-size: 13px; }
+.t-saas .field { height: 38px; }
+.t-saas .tbl th { background: rgb(247 248 251); font-size: 11px; }
+.t-saas .tbl td { padding-top: 10px; padding-bottom: 10px; }
+
+/* ─── Movimento ─────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+.page-enter { animation: pageIn .45s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.kenburns { animation: kb 18s ease-in-out infinite alternate; }
+@keyframes kb { from { transform: scale(1.02); } to { transform: scale(1.09) translateX(-1.5%); } }
+.img-zoom img { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.img-zoom:hover img { transform: scale(1.045); }
+.pulse-dot { position: relative; }
+.pulse-dot::after { content: ''; position: absolute; inset: -4px; border-radius: 999px; border: 2px solid currentColor; opacity: 0; animation: ping 1.8s ease-out infinite; }
+@keyframes ping { 0% { opacity: .6; transform: scale(.6); } 100% { opacity: 0; transform: scale(1.6); } }
+.toast-in { animation: toastIn .35s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+.fade-in { animation: fadeIn .25s ease both; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.sheet-in { animation: sheetIn .3s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes sheetIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.bar-grow { transform-origin: left; animation: barGrow 1.1s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.flash { animation: flash 1.2s ease; }
+@keyframes flash { 0% { background: rgb(var(--accent) / .28); } 100% { background: transparent; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
