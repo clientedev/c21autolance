@@ -131,7 +131,7 @@ function Home() {
               <p className="mt-2 text-muted">{s.lead}</p>
               <table className="mt-6 w-full text-sm">
                 <thead><tr className="text-left text-xs text-muted"><th className="pb-2 font-semibold">Sem a plataforma</th><th className="pb-2 font-semibold">Com o C21 AutoLance</th></tr></thead>
-                <tbody>{s.pains.map((p, i) => <tr key={p} className="border-t border-[rgb(var(--line))] align-top"><td className="py-3 pr-4"><span className="flex gap-2"><No size={15} className="mt-0.5 shrink-0 text-[#c4373b]" />{p}</span></td><td className="py-3"><span className="flex gap-2 font-semibold"><Check size={15} className="mt-0.5 shrink-0 text-[#4fa874]" />{s.gains[i]}</span></td></tr>)}</tbody>
+                <tbody>{s.pains.map((p, i) => <tr key={p} className="border-t border-[rgb(var(--line))] align-top"><td className="py-3 pr-4"><span className="flex gap-2"><No size={15} className="mt-0.5 shrink-0 text-[#2b2d8b]" />{p}</span></td><td className="py-3"><span className="flex gap-2 font-semibold"><Check size={15} className="mt-0.5 shrink-0 text-[#4fa874]" />{s.gains[i]}</span></td></tr>)}</tbody>
               </table>
               <PLink to={`para/${s.slug}`} className="btn btn-primary btn-sm mt-6">Soluções para {s.name.toLowerCase()} <ArrowRight size={14} /></PLink>
             </div>

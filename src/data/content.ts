@@ -43,7 +43,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'repasse',
-    photo: 'caoa/tiggo8-studio.webp',
+    photo: 'caoa/tiggo9-hero.webp',
     name: 'Repasse e lances',
     short: 'Pregão online de usados para lojistas verificados em todo o país, com lances em tempo real.',
     title: 'Repasse o usado que não fica no estoque em horas, não em semanas.',
@@ -89,7 +89,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'estoque',
-    photo: 'caoa/tiggo5x-duo.webp',
+    photo: 'caoa/tiggo5x-night.webp',
     name: 'Gestão de estoque',
     short: 'Giro, custo de permanência e precificação de cada usado, por loja e por grupo.',
     title: 'Saiba qual carro está custando dinheiro parado no pátio.',
@@ -152,7 +152,7 @@ export const segments: Segment[] = [
   },
   {
     slug: 'lojistas',
-    photo: 'caoa/unit-desert.webp',
+    photo: 'caoa/cs55-duo.webp',
     name: 'Lojistas multimarcas',
     short: 'Compre estoque de procedência direto das concessionárias, com laudo e histórico de lances.',
     title: 'Estoque de procedência, comprado direto da fonte.',

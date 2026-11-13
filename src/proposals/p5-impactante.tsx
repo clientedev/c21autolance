@@ -77,7 +77,7 @@ function Layout({ children }: { children: ReactNode }) {
 }
 
 function Home() {
-  const segImgs = [media('caoa/tiggo7-night.webp'), media('caoa/unit-desert.webp'), media('caoa/tiggo9-street.webp')]
+  const segImgs = [media('caoa/tiggo7-night.webp'), media('caoa/unit-grille.webp'), media('caoa/tiggo9-street.webp')]
   return (
     <>
       <section className="relative h-[100svh] min-h-[640px] overflow-hidden bg-black">
@@ -137,7 +137,7 @@ function Home() {
       </section>
 
       <section className="relative overflow-hidden">
-        <img src={media('caoa/tiggo8-studio.webp')} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={media('caoa/tiggo9-hero.webp')} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d013a] via-[#0d013a]/85 to-[#0d013a]/30" />
         <div className="wrap relative py-24">
           <p className="font-display text-lg font-semibold uppercase tracking-[0.2em] text-[#66c18c]">Demonstração</p>

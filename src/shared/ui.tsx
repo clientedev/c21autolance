@@ -120,7 +120,7 @@ export function FavButton({ id, className, label }: { id: string; className?: st
       aria-label={on ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
       className={cx('inline-flex items-center gap-2 transition active:scale-90', className)}
     >
-      <Heart size={16} className={cx('transition', on ? 'fill-[#e5484d] text-[#e5484d]' : '')} />
+      <Heart size={16} className={cx('transition', on ? 'fill-[#374ea1] text-[#374ea1]' : '')} />
       {label && <span>{on ? 'Favorito' : 'Favoritar'}</span>}
     </button>
   )
@@ -151,12 +151,12 @@ export function Countdown({ vehicleId, className, prefix }: { vehicleId: string;
 const statusTone: Record<string, string> = {
   'Em disputa': 'bg-[#66c18c]/15 text-[#2f8a57]',
   'Em análise': 'bg-[#374ea1]/12 text-[#374ea1]',
-  Contraproposta: 'bg-[#d9a400]/15 text-[#946f00]',
+  Contraproposta: 'bg-[#374ea1]/15 text-[#2b2d8b]',
   Aceita: 'bg-[#66c18c]/15 text-[#2f8a57]',
   Arrematado: 'bg-[#66c18c]/15 text-[#2f8a57]',
   Vendido: 'bg-[#66c18c]/15 text-[#2f8a57]',
-  Recusada: 'bg-[#e5484d]/12 text-[#c4373b]',
-  Superado: 'bg-[#e5484d]/12 text-[#c4373b]',
+  Recusada: 'bg-[#374ea1]/12 text-[#2b2d8b]',
+  Superado: 'bg-[#374ea1]/12 text-[#2b2d8b]',
   Encerrada: 'bg-[#888]/15 text-[#666]',
   'Sem lance mínimo': 'bg-[#888]/15 text-[#666]',
   'Lance aberto': 'bg-[#66c18c]/15 text-[#2f8a57]',
@@ -257,7 +257,7 @@ export function Toaster() {
         const I = icon[t.tone ?? 'info']
         return (
           <div key={t.id} className="toast-in pointer-events-auto flex gap-3 rounded-md border border-black/5 bg-white p-4 text-[#16182e] shadow-[0_8px_30px_rgba(13,1,58,.16)]" style={{ fontFamily: 'var(--font-body)' }}>
-            <I size={18} className={t.tone === 'warn' ? 'mt-0.5 text-[#d97706]' : t.tone === 'ok' ? 'mt-0.5 text-[#2f8a57]' : 'mt-0.5 text-[#374ea1]'} />
+            <I size={18} className={t.tone === 'warn' ? 'mt-0.5 text-[#374ea1]' : t.tone === 'ok' ? 'mt-0.5 text-[#2f8a57]' : 'mt-0.5 text-[#374ea1]'} />
             <div className="min-w-0 flex-1">
               <p className="text-sm font-semibold">{t.title}</p>
               {t.text && <p className="mt-0.5 text-[13px] text-[#5f6376]">{t.text}</p>}
@@ -418,7 +418,7 @@ export function ActionModal({ kind, vehicleId, onClose }: { kind: ActionKind | n
               </div>
             </>
           )}
-          {error && <p className="text-sm text-[#c4373b]">{error}</p>}
+          {error && <p className="text-sm text-[#2b2d8b]">{error}</p>}
           <button className="btn btn-primary w-full">{kind === 'bid' ? 'Confirmar lance' : 'Enviar proposta'}</button>
           <p className="text-center text-[11px] text-muted">{kind === 'bid' ? 'Lances confirmados são vinculantes conforme os termos de uso.' : 'A proposta é válida por 48 horas.'}</p>
         </form>

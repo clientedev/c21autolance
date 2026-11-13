@@ -118,7 +118,7 @@ export function SegmentPage() {
       <section className="wrap grid gap-6 py-14 md:grid-cols-2">
         <div className="panel p-7">
           <p className="text-sm font-semibold text-muted">Sem a plataforma</p>
-          <ul className="mt-5 space-y-4">{s.pains.map((p) => <li key={p} className="flex gap-3"><XIcon size={18} className="mt-0.5 shrink-0 text-[#c4373b]" />{p}</li>)}</ul>
+          <ul className="mt-5 space-y-4">{s.pains.map((p) => <li key={p} className="flex gap-3"><XIcon size={18} className="mt-0.5 shrink-0 text-[#2b2d8b]" />{p}</li>)}</ul>
         </div>
         <div className={cx('p-7', isDark(id) ? 'panel' : 'bg-[#0d013a] text-white')} style={{ borderRadius: 'var(--radius)' }}>
           <p className={cx('text-sm font-semibold', isDark(id) ? 'text-[#66c18c]' : 'text-[#66c18c]')}>Com o C21 AutoLance</p>
@@ -335,7 +335,7 @@ export function LoginPage() {
       <div className="wrap py-10">
         <div className="mb-6 flex items-center gap-1 overflow-x-auto border-b border-[rgb(var(--line))] no-scrollbar" role="tablist">
           {tabs.map(([t, l]) => <button key={t} role="tab" aria-selected={tab === t} onClick={() => setTab(t)} className={cx('-mb-px whitespace-nowrap border-b-2 px-4 py-3 text-sm font-medium transition', tab === t ? 'border-[rgb(var(--accent))] text-ink' : 'border-transparent text-muted hover:text-ink')}>{l}</button>)}
-          <button onClick={logout} className="ml-auto flex items-center gap-1.5 whitespace-nowrap px-3 py-3 text-sm text-muted hover:text-[#c4373b]"><LogOut size={14} /> Sair</button>
+          <button onClick={logout} className="ml-auto flex items-center gap-1.5 whitespace-nowrap px-3 py-3 text-sm text-muted hover:text-[#2b2d8b]"><LogOut size={14} /> Sair</button>
         </div>
         <div key={tab} className="page-enter">
           {tab === 'conta' ? (

@@ -15,7 +15,7 @@ export function BrowserFrame({ children, path = 'painel', dark, className, activ
   return (
     <div className={cx('overflow-hidden rounded-xl text-left text-[#16182e] shadow-[0_30px_80px_-30px_rgba(13,1,58,.45)] ring-1', dark ? 'ring-white/10' : 'ring-black/[.08]', className)} style={font}>
       <div className={cx('flex h-9 items-center gap-3 px-3', dark ? 'bg-[#1b1550]' : 'bg-[#eef0f5]')}>
-        <div className="flex gap-1.5">{['#ff5f57', '#febc2e', '#28c840'].map((c) => <span key={c} className="h-2.5 w-2.5 rounded-full" style={{ background: c }} />)}</div>
+        <div className="flex gap-1.5">{['#c9ccd8', '#c9ccd8', '#c9ccd8'].map((c) => <span key={c} className="h-2.5 w-2.5 rounded-full" style={{ background: c }} />)}</div>
         <div className={cx('mx-auto flex h-6 w-full max-w-[320px] items-center justify-center rounded-md text-[11px]', dark ? 'bg-white/10 text-white/60' : 'bg-white text-[#7a7f96]')}>app.c21autolance.com.br/{path}</div>
         <div className="w-10" />
       </div>
@@ -51,7 +51,7 @@ const Kpi = ({ label, value, delta, up }: { label: string; value: string; delta?
   <div className="rounded-lg border border-[#e3e6ee] bg-white p-2.5">
     <p className="text-[10px] text-[#7a7f96]">{label}</p>
     <p className="num mt-0.5 text-[15px] font-semibold">{value}</p>
-    {delta && <p className={cx('mt-0.5 flex items-center gap-0.5 text-[10px] font-medium', up ? 'text-[#2f8a57]' : 'text-[#c4373b]')}>{up ? <ArrowUpRight size={10} /> : <ArrowDownRight size={10} />}{delta}</p>}
+    {delta && <p className={cx('mt-0.5 flex items-center gap-0.5 text-[10px] font-medium', up ? 'text-[#2f8a57]' : 'text-[#2b2d8b]')}>{up ? <ArrowUpRight size={10} /> : <ArrowDownRight size={10} />}{delta}</p>}
   </div>
 )
 
@@ -147,7 +147,7 @@ export function AuctionScreen({ dark, compact }: { dark?: boolean; compact?: boo
               <p className="text-[10px] text-[#7a7f96]">{v.yearFab}/{v.yearModel} · {v.km.toLocaleString('pt-BR')} km · Laudo {v.inspectionScore}/100</p>
               <div className="mt-1.5 flex items-end gap-4">
                 <div><p className="text-[10px] text-[#7a7f96]">Lance atual</p><p className="num text-lg font-semibold text-[#2b2d8b]">{brl(live.current)}</p></div>
-                <div><p className="text-[10px] text-[#7a7f96]">Encerra em</p><p className={cx('num text-lg font-semibold', live.remaining < 1800000 && 'text-[#c4373b]')}>{countdown(live.remaining)}</p></div>
+                <div><p className="text-[10px] text-[#7a7f96]">Encerra em</p><p className={cx('num text-lg font-semibold', live.remaining < 1800000 && 'text-[#2b2d8b]')}>{countdown(live.remaining)}</p></div>
               </div>
             </div>
           </div>
@@ -187,10 +187,10 @@ type Deal = { id: string; vehicle: string; value: number; buyer: string; time: s
 const initialDeals: Deal[] = [
   { id: 'N-1', vehicle: 'CAOA Chery Tiggo 5X Pro 2024', value: 106500, buyer: 'Lojista #208', time: 'há 12 min', col: 0 },
   { id: 'N-2', vehicle: 'CAOA Changan CS55 PHEV 2026', value: 184000, buyer: 'Lojista #154', time: 'há 40 min', col: 0 },
-  { id: 'N-3', vehicle: 'CAOA Chery Tiggo 7 Sport 2023', value: 118500, buyer: 'Concessionária #07', time: 'há 1 h', col: 1 },
+  { id: 'N-3', vehicle: 'Toyota Corolla Cross 2023', value: 142500, buyer: 'Concessionária #07', time: 'há 1 h', col: 1 },
   { id: 'N-4', vehicle: 'CAOA Chery Tiggo 8 Pro 2024', value: 176000, buyer: 'Lojista #331', time: 'há 2 h', col: 2 },
-  { id: 'N-5', vehicle: 'CAOA Changan CS75 2026', value: 198000, buyer: 'Lojista #090', time: 'ontem', col: 3 },
-  { id: 'N-6', vehicle: 'CAOA Chery Arrizo 6 Pro 2024', value: 112500, buyer: 'Concessionária #12', time: 'ontem', col: 3 },
+  { id: 'N-5', vehicle: 'Jeep Compass 2023', value: 151000, buyer: 'Lojista #090', time: 'ontem', col: 3 },
+  { id: 'N-6', vehicle: 'Volkswagen T-Cross 2024', value: 118900, buyer: 'Concessionária #12', time: 'ontem', col: 3 },
 ]
 const cols = ['Recebidas', 'Em análise', 'Contraproposta', 'Aceitas']
 export function OffersScreen({ dark }: { dark?: boolean }) {
@@ -236,7 +236,7 @@ const aging = [
   { unit: 'Batel', a: 18, b: 7, c: 2 },
   { unit: 'Cambuí', a: 12, b: 8, c: 6 },
 ]
-const actTone: Record<string, string> = { Manter: 'bg-[#eceef4] text-[#454a63]', Reprecificar: 'bg-[#fff4d6] text-[#8a6500]', 'Enviar para repasse': 'bg-[#ffe3e3] text-[#b42d31]', 'Publicar em portais': 'bg-[#e4e8fb] text-[#2b2d8b]' }
+const actTone: Record<string, string> = { Manter: 'bg-[#eceef4] text-[#454a63]', Reprecificar: 'bg-[#eceef4] text-[#374ea1]', 'Enviar para repasse': 'bg-[#e4e8fb] text-[#28256a]', 'Publicar em portais': 'bg-[#e4e8fb] text-[#2b2d8b]' }
 export function StockScreen({ dark }: { dark?: boolean }) {
   const max = Math.max(...aging.map((r) => r.a + r.b + r.c))
   const seq = ['#b7c0e6', '#5b6cc0', '#2b2d8b']
@@ -276,7 +276,7 @@ export function StockScreen({ dark }: { dark?: boolean }) {
                     <tr key={r.v} className="border-t border-[#eef0f5]">
                       <td className="px-2 py-1.5"><span className="flex items-center gap-1.5"><img src={v.cover} alt="" className="h-5 w-7 rounded-sm object-cover" /><span className="truncate font-medium">{v.brand} {v.model}</span></span></td>
                       <td className="hidden px-2 text-[#5f6376] md:table-cell">{r.unit}</td>
-                      <td className={cx('num px-2 text-right', r.days > 60 && 'font-semibold text-[#b42d31]')}>{r.days}</td>
+                      <td className={cx('num px-2 text-right', r.days > 60 && 'font-semibold text-[#28256a]')}>{r.days}</td>
                       <td className="num px-2 text-right">{r.vsMarket > 0 ? '+' : ''}{r.vsMarket.toLocaleString('pt-BR')}%</td>
                       <td className="px-2"><span className={cx('whitespace-nowrap rounded px-1.5 py-0.5 text-[9px] font-medium', actTone[r.action])}>{r.action}</span></td>
                     </tr>
@@ -295,14 +295,14 @@ export function StockScreen({ dark }: { dark?: boolean }) {
 const series: Record<string, number[]> = {
   'Tiggo 7 Pro 2025': [171800, 171200, 170600, 170100, 169400, 169600, 168900, 168300, 167800, 167500, 166900, 166400],
   'UNI-T 2026': [178200, 178900, 179300, 179100, 179800, 180400, 180200, 180900, 181300, 181100, 181800, 182000],
-  'Tiggo 5X Pro 2024': [119300, 118900, 118700, 118200, 117900, 117600, 117200, 116800, 116500, 116100, 115800, 115400],
+  'Corolla Cross 2023': [119300, 118900, 118700, 118200, 117900, 117600, 117200, 116800, 116500, 116100, 115800, 115400],
 }
 const liquidity = [
   { model: 'CAOA Changan UNI-T', days: 8 },
-  { model: 'CAOA Chery Tiggo 5X Pro', days: 10 },
+  { model: 'Volkswagen T-Cross', days: 10 },
   { model: 'CAOA Chery Tiggo 7 Pro', days: 13 },
-  { model: 'CAOA Changan CS55', days: 16 },
-  { model: 'CAOA Chery Tiggo 8 Pro', days: 21 },
+  { model: 'Toyota Corolla Cross', days: 15 },
+  { model: 'Jeep Compass', days: 19 },
 ]
 export function IntelScreen({ dark }: { dark?: boolean }) {
   const keys = Object.keys(series)
@@ -316,7 +316,7 @@ export function IntelScreen({ dark }: { dark?: boolean }) {
       <div className="grid gap-2.5 p-3 md:grid-cols-[1.6fr_1fr]">
         <div className="rounded-lg border border-[#e3e6ee] bg-white p-2.5">
           <div className="flex flex-wrap gap-1">{keys.map((k) => <button key={k} onClick={() => setM(k)} className={cx('rounded-full px-2 py-0.5 text-[10px] font-medium transition', m === k ? 'bg-[#0d013a] text-white' : 'bg-[#f4f5f9] text-[#5f6376]')}>{k}</button>)}</div>
-          <div className="mt-2 flex items-end justify-between"><div><p className="text-[10px] text-[#7a7f96]">{m}</p><p className="num text-lg font-semibold">{brl(data[11])}</p></div><p className={cx('num flex items-center text-[11px] font-semibold', change >= 0 ? 'text-[#2f8a57]' : 'text-[#c4373b]')}>{change >= 0 ? <ArrowUpRight size={12} /> : <ArrowDownRight size={12} />}{change.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}% em 12 meses</p></div>
+          <div className="mt-2 flex items-end justify-between"><div><p className="text-[10px] text-[#7a7f96]">{m}</p><p className="num text-lg font-semibold">{brl(data[11])}</p></div><p className={cx('num flex items-center text-[11px] font-semibold', change >= 0 ? 'text-[#2f8a57]' : 'text-[#2b2d8b]')}>{change >= 0 ? <ArrowUpRight size={12} /> : <ArrowDownRight size={12} />}{change.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}% em 12 meses</p></div>
           <div className="mt-3" key={m}><Line data={data} labels={months} h={110} /></div>
           <div className="mt-1 flex justify-between text-[9px] text-[#9a9db0]">{months.filter((_, i) => i % 2 === 0).map((l) => <span key={l}>{l}</span>)}</div>
         </div>

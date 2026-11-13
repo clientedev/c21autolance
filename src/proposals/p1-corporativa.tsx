@@ -105,11 +105,11 @@ function Home() {
   const [faqOpen, setFaqOpen] = useState(0)
   const sol = solutions[active]
   const brands = [
-    { name: 'CAOA Chery', photo: 'caoa/tiggo9-street.webp', models: ['Tiggo 5X Pro', 'Tiggo 7 Pro', 'Tiggo 8 Pro PHEV', 'Tiggo 9', 'Arrizo 6 Pro'], text: 'Linha Tiggo e Arrizo: SUVs e sedãs com alta liquidez no mercado de seminovos.' },
-    { name: 'CAOA Changan', photo: 'caoa/unit-desert.webp', models: ['UNI-T', 'CS55', 'CS55 PHEV', 'CS75'], text: 'Nova geração de SUVs com produção em Anápolis e tecnologia embarcada de ponta.' },
+    { name: 'Todas as marcas', photo: 'caoa/tiggo9-street.webp', tags: ['SUVs', 'Sedãs', 'Hatches', 'Picapes', 'Híbridos e elétricos'], text: 'Avaliação padronizada para qualquer marca, modelo e ano, com o mesmo critério em toda a rede.' },
+    { name: 'Todo o país', photo: 'caoa/unit-grille.webp', tags: ['27 UFs', 'Concessionárias', 'Lojistas', 'Grupos', 'Locadoras'], text: 'Compradores verificados em todos os estados, com frete cotado e retirada agendada na plataforma.' },
   ]
   const gallery = [
-    { img: 'caoa/tiggo8-studio.webp', title: 'Fotografia padronizada', text: 'Roteiro de fotos guiado pelo aplicativo para todos os anúncios.' },
+    { img: 'caoa/tiggo5x-studio.webp', title: 'Fotografia padronizada', text: 'Roteiro de fotos guiado pelo aplicativo para todos os anúncios.' },
     { img: 'caoa/tiggo9-cockpit.webp', title: 'Interior documentado', text: 'Painel, bancos e quilometragem registrados na avaliação.' },
     { img: 'caoa/unit-wheel.webp', title: 'Mapa de avarias', text: 'Rodas, pneus e lataria inspecionados peça por peça.' },
     { img: 'caoa/cs55-engine.webp', title: 'Laudo cautelar', text: 'Mecânica e estrutura verificadas antes da publicação.' },
@@ -131,7 +131,7 @@ function Home() {
               <PLink to="contato" className="btn btn-accent">{hero.primaryCta}</PLink>
               <a href="#solucoes" onClick={(e) => (e.preventDefault(), document.getElementById('solucoes')?.scrollIntoView({ behavior: 'smooth' }))} className="btn border border-white/30 text-white hover:bg-white/10">{hero.secondaryCta}</a>
             </div>
-            <div className="mt-12 flex items-center gap-6 text-xs uppercase tracking-[0.18em] text-white/50"><span>Seminovos das redes</span><span className="font-medium text-white/85">CAOA Chery</span><span className="h-3 w-px bg-white/25" /><span className="font-medium text-white/85">CAOA Changan</span></div>
+            <div className="mt-12 flex flex-wrap items-center gap-6 text-xs uppercase tracking-[0.18em] text-white/55"><span>Multimarcas</span><span className="h-3 w-px bg-white/25" /><span>Concessionárias</span><span className="h-3 w-px bg-white/25" /><span>Lojistas</span><span className="h-3 w-px bg-white/25" /><span>Grupos automotivos</span></div>
           </div>
           <Reveal className="hidden lg:block"><DashboardScreen /></Reveal>
         </div>
@@ -150,18 +150,18 @@ function Home() {
       </section>
 
       <section className="wrap py-24">
-        <SectionHead eyebrow="Ecossistema" title="Preparado para o estoque das redes CAOA Chery e CAOA Changan" text="Modelos de alta procura, avaliados com o mesmo padrão e negociados com compradores verificados em todo o país." />
+        <SectionHead eyebrow="Multimarcas" title="Uma plataforma para o seminovo de qualquer marca" text="Do compacto ao SUV híbrido: todo veículo é avaliado com o mesmo padrão e negociado com compradores verificados em todo o país." />
         <div className="grid gap-6 lg:grid-cols-2">
           {brands.map((b, k) => (
             <Reveal key={b.name} delay={k * 120}>
               <div className="img-zoom group relative h-[460px] overflow-hidden bg-[#0d013a] text-white">
-                <img src={media(b.photo)} alt={`Linha ${b.name}`} className="absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d013a] via-[#0d013a]/40 to-transparent" />
+                <img src={media(b.photo)} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d013a] via-[#0d013a]/20 via-40% to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[#66c18c]">Rede</p>
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-[#66c18c]">Alcance</p>
                   <p className="mt-2 font-display text-4xl font-light">{b.name}</p>
                   <p className="mt-2 max-w-md text-sm text-white/75">{b.text}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">{b.models.map((m) => <span key={m} className="border border-white/25 px-3 py-1 text-xs tracking-wide text-white/85 backdrop-blur">{m}</span>)}</div>
+                  <div className="mt-5 flex flex-wrap gap-2">{b.tags.map((m) => <span key={m} className="border border-white/25 px-3 py-1 text-xs tracking-wide text-white/85 backdrop-blur">{m}</span>)}</div>
                 </div>
               </div>
             </Reveal>
@@ -280,7 +280,7 @@ function Home() {
       </section>
 
       <section className="grid md:grid-cols-3">
-        {[['caoa/changan-taillight.webp', 'Lanternas e iluminação'], ['caoa/changan-headlight.webp', 'Faróis e assinatura luminosa'], ['caoa/changan-wing.webp', 'Linhas e acabamento externo']].map(([img, t]) => (
+        {[['caoa/changan-wing.webp', 'Linhas e acabamento externo'], ['caoa/unit-wheel.webp', 'Rodas e pneus'], ['caoa/cs75-interior.webp', 'Interior e acabamento']].map(([img, t]) => (
           <div key={t} className="img-zoom group relative h-[520px] overflow-hidden bg-black">
             <img src={media(img)} alt={t} className="h-full w-full object-cover opacity-90" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
